@@ -2,15 +2,20 @@
 library(plyr)
 library(dplyr)
 
+#Download the data
+url1="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url1,destfile = "./DataFiles.zip",method = "curl")
+unzip("./DataFiles.zip")
+
 #Read the test data
-subjectTest=read.table("./Data/test/subject_test.txt")
-Xtest=read.table("./Data/test/X_test.txt")
-Ytest=read.table("./Data/test/y_test.txt")
+subjectTest=read.table("./UCI HAR Dataset/test/subject_test.txt")
+Xtest=read.table("./UCI HAR Dataset/test/X_test.txt")
+Ytest=read.table("./UCI HAR Dataset/test/y_test.txt")
 
 #Read the training data
-subjectTrain=read.table("./Data/train/subject_train.txt")
-Xtrain=read.table("./Data/train/X_train.txt")
-Ytrain=read.table("./Data/train/y_train.txt")
+subjectTrain=read.table("./UCI HAR Dataset/train/subject_train.txt")
+Xtrain=read.table("./UCI HAR Dataset/train/X_train.txt")
+Ytrain=read.table("./UCI HAR Dataset/train/y_train.txt")
 
 #Read the features
 features=read.table("./Data/features.txt")
